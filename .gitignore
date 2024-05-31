@@ -1,0 +1,35 @@
+# Ignore Visual Studio files
+.vs/
+/.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build output
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+AnyCPU/
+
+# Ignore NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build logs and files
+*.log
+*.diff
+*.md
+*.ps1
+*.bat
+*.vsix

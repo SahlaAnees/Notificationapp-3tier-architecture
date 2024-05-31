@@ -1,0 +1,73 @@
+﻿@model BOL.CommonEntities.StudentModule;
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>Student List</h3>
+        </div>
+
+        <div class="col-lg-6">
+            <a href="@Url.Action("CreateStudent","Student")" class="btn btn-primary">Add new student</a>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-lg-8">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">StudentID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{
+                        if (Model != null && Model.studentList != null && Model.studentList.Count() > 0)
+                        {
+                            foreach (var item in Model.studentList)
+                            {
+                                <tr>
+                                    <th scope="row">@item.UserID</th>
+                                    <td>@item.UserName</td>
+                                    <td>@item.UserEmail</td>
+                                    <td>@item.UserPhoneNo</td>
+                                </tr>
+                            }
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
